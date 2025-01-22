@@ -15,37 +15,30 @@ test("Testing div: Divide by 0 -- throw error", () => {
 });
 
 test("Testing containsNumbers: no numbers -- success", () => {
-    const target = false;
     const result = myFunctions.containsNumbers("nonumbers!");
-    expect(result).toBe(target);
+    expect(result).toBeFalsy();
 });
 test("Testing containsNumbers: with numbers -- success", () => {
-    const target = true;
     const result = myFunctions.containsNumbers("hasnumbers$421#19abc");
-    expect(result).toBe(target);
+    expect(result).toBeTruthy();
 });
 test("Testing containsNumbers: empty string -- success", () => {
-    const target = false;
     const result = myFunctions.containsNumbers("");
-    expect(result).toBe(target);
+    expect(result).toBeFalsy;
 });
 test("Testing containsNumbers: special characters -- success", () => {
-    const target = false;
     const result = myFunctions.containsNumbers("µ˜∂∆∑ø¨´†˜øåøœ∑ˆ®˜µ≈ª£§∞¢∞£™");
-    expect(result).toBe(target);
+    expect(result).toBeFalsy;
 });
 test("Testing containsNumbers: Zero -- success", () => {
-    const target = true;
     const result = myFunctions.containsNumbers("oO(0)");
-    expect(result).toBe(target);
+    expect(result).toBeTruthy;
 });
 test("Testing containsNumbers: Other characters -- success", () => {
-    const target = false;
     const result = myFunctions.containsNumbers("`~!@#$%^&*()-+=-/[]{}|;:<>,.");
-    expect(result).toBe(target);
+    expect(result).toBeFalsy;
 });
 test("Testing containsNumbers: space -- success", () => {
-    const target = false;
     const result = myFunctions.containsNumbers(" ");
-    expect(result).toBe(target);
+    expect(result).toBe(false);
 });
