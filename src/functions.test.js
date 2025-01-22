@@ -44,3 +44,8 @@ test("Testing containsNumbers: Other characters -- success", () => {
     const result = myFunctions.containsNumbers("`~!@#$%^&*()-+=-/[]{}|;:<>,.");
     expect(result).toBe(target);
 });
+test("Testing containsNumbers: space -- success", () => {
+    const target = false;
+    const result = myFunctions.containsNumbers(" ");
+    expect(result).toBe(target);
+});
