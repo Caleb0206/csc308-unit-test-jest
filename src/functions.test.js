@@ -3,5 +3,44 @@ const myFunctions = require('./functions.js');
 test('Testing div: Divide by itself -- success', () => {
     const target = 1;
     const result = myFunctions.div(5, 5);
-    expect(target).toBe(result);
+    expect(result).toBe(target);
+});
+test("Testing div: Divide by 2 -- success", () => {
+    const target = 30;
+    const result = myFunctions.div(60, 2);
+    expect(result).toBe(target);
+})
+test("Testing div: Divide by 0 -- throw error", () => {
+    expect(() => myFunctions.div(60, 0).toThrow("Division by zero"))
+});
+
+test("Testing containsNumbers: no numbers -- success", () => {
+    const target = false;
+    const result = myFunctions.containsNumbers("nonumbers!");
+    expect(result).toBe(target);
+});
+test("Testing containsNumbers: with numbers -- success", () => {
+    const target = true;
+    const result = myFunctions.containsNumbers("hasnumbers$421#19abc");
+    expect(result).toBe(target);
+});
+test("Testing containsNumbers: empty string -- success", () => {
+    const target = false;
+    const result = myFunctions.containsNumbers("");
+    expect(result).toBe(target);
+});
+test("Testing containsNumbers: special characters -- success", () => {
+    const target = false;
+    const result = myFunctions.containsNumbers("µ˜∂∆∑ø¨´†˜øåøœ∑ˆ®˜µ≈ª£§∞¢∞£™");
+    expect(result).toBe(target);
+});
+test("Testing containsNumbers: Zero -- success", () => {
+    const target = true;
+    const result = myFunctions.containsNumbers("oO(0)");
+    expect(result).toBe(target);
+});
+test("Testing containsNumbers: Other characters -- success", () => {
+    const target = false;
+    const result = myFunctions.containsNumbers("`~!@#$%^&*()-+=-/[]{}|;:<>,.");
+    expect(result).toBe(target);
 });
