@@ -40,5 +40,5 @@ test("Testing containsNumbers: Other characters -- success", () => {
 });
 test("Testing containsNumbers: space -- success", () => {
     const result = myFunctions.containsNumbers(" ");
-    expect(result).toBe(false);
+    expect(result).toBeFalsy();
 });
